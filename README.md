@@ -15,3 +15,6 @@ TMMapEditor, a 3D level editor inspired by the classic Hammer editor
     -   Multi Viewport user interfacer
 
     -   Download the last Version from Releases
+
+![Screen shot of the Tool](TMMapEditor.jpg)
+
