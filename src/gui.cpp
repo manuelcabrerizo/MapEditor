@@ -52,6 +52,10 @@ void RenderImGui()
         if(strcmp(saveToPath, "") != 0) {
             gShowErrorWindow = !CreateBinaryFile_HMAP(saveToPath); 
         }
+        else
+        {
+            gShowErrorWindow = true;
+        }
     }
  
     ImGui::SeparatorText("Open file:");
@@ -63,6 +67,10 @@ void RenderImGui()
         if(strcmp(openFromPath, "") != 0) {
             UnloadTextureArray(&gTextureArray);
             gShowErrorWindow = !LoadBinaryFile_HMAP(openFromPath);
+        }
+        else
+        {
+            gShowErrorWindow = true;
         }
     }
     
@@ -89,6 +97,10 @@ void RenderImGui()
     {
         if(strcmp(texturePath, "") != 0) {
             gShowErrorWindow = !LoadTextureToTextureArray(&gTextureArray, texturePath);
+        }
+        else
+        {
+            gShowErrorWindow = true;
         }
     }
     if(ImGui::Button("Show Textures"))

@@ -873,7 +873,7 @@ bool LoadTextureToTextureArray(TextureArray *array, char * filepath)
     UnloadTextureArrayGpuData(array);
     LoadTextureArrayGpuData(array);
 
-    return false;
+    return true;
 
 }
 
