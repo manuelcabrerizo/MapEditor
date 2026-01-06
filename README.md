@@ -11,5 +11,6 @@ Fueatures:
     -   Clip Geometry using planes
     -   Add Textures to Geometry
     -   Multi Viewport user interfacer
-    -   Download the last Version from Releases
+
+Download the last Version from Releases
 
