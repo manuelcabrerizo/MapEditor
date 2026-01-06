@@ -33,11 +33,10 @@ static u32 gResizeHeight;
 static f32 gCurrentWindowWidth = WINDOW_WIDTH;
 static f32 gCurrentWindowHeight = WINDOW_HEIGHT;
 
-// TODO: this cant be change by the user
-static f32 gFixWidth = 200.0f;
-static f32 gUnitSize = 64.0f;
-static f32 gGridSize = 200.0f;
-static f32 g3DScale = 64.0f;
+static const f32 gFixWidth = 200.0f;
+static const f32 gUnitSize = 64.0f;
+static const f32 gGridSize = 200.0f;
+static const f32 g3DScale = 64.0f;
 
 // global variables for use during rendering
 static Shader gColShader;
@@ -61,7 +60,6 @@ static Vertex gQuad[] = {
     {{ 0.5f,  0.5f, 0}, {0, 0, 1}, {0.8, 0.8, 0.8, 1}, {1, 0}}
 };
 
-// TODO: see what to do with this ones
 static Entity *gSelectedEntity;
 static Entity *gEntityList;
 static EditorMode gCurrentEditorMode;
@@ -109,9 +107,7 @@ void ProcessWindowResize(ViewManager *vm, CBuffer *cbuffer, f32 &clientWidth, Re
     } 
 }
 
-
-//int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-int main()
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
     HINSTANCE instace = GetModuleHandle(0);
     HWND window = InitWindow(instace);
@@ -154,7 +150,7 @@ int main()
 
     // Load Vertex Buffer
     gVertexBuffer = LoadVertexBuffer(gQuad, ARRAY_LENGTH(gQuad), layout);
-    gDynamicVertexBuffer = LoadDynamicVertexBuffer(GIGABYTES(1), layout); // TODO: set the size better
+    gDynamicVertexBuffer = LoadDynamicVertexBuffer(GIGABYTES(1), layout);
 
     // Load FrameBuffer
     f32 clientWidth = (WINDOW_WIDTH - gFixWidth);
